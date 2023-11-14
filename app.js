@@ -7,7 +7,7 @@ app.use(express.json());
 const dbPath = path.join(__dirname, "cricketTeam.db");
 let db = null;
 
-const initialize = async () => {
+const intialize = async () => {
   try {
     db = await open({
       filename: dbPath,
@@ -19,7 +19,7 @@ const initialize = async () => {
     process.exit(1);
   }
 };
-initialize();
+intialize();
 
 const convertObjectToResponseObject = (dbObject) => {
   return {
